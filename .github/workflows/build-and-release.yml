@@ -43,7 +43,7 @@ jobs:
     - name: Build GSC image
       run: |
         cd gsc
-        ./gsc build my-node-app ../my-proof.manifest.template -c ../config.yaml
+        ./gsc build my-node-app ../m0-proof.manifest.template -c ../config.yaml
 
     - name: Sign GSC image
       run: |
