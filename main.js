@@ -1,8 +1,6 @@
-import { createServer } from 'http';
 import fs from 'fs';
 import path from 'path';
 import unzipper from 'unzipper';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { Proof } from './utils/proofValidation.js';
 
