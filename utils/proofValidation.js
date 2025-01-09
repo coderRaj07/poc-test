@@ -167,7 +167,8 @@ async function authenticityScore(dataList) {
 }
 
 async function uniquenessScore(dataList) {
-    // Needs to be checked
+    // Since Uniqueness is checked from Database, before accepting the data,
+    return 1; 
 }
 
 
