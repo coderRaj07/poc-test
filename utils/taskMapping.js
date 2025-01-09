@@ -70,7 +70,7 @@ const ContributionSubTypeWeights = {
     [EContributionSubType.TWITTER_USERINFO]: 1.0,
     [EContributionSubType.FARCASTER_USERINFO]: 1.1,
 };
-
+ 
 /**
  * Calculates the maximum possible score 
  * based on the task data type mapping and contribution subtype weights.
