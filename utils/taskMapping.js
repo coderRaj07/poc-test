@@ -28,27 +28,27 @@ export const EContributionSubType = {
 // Task data type mapping with configurable points from the environment
 export const TaskDataTypeMapping = {
     [EContributionType.NETFLIX]: {
-        [EContributionSubType.NETFLIX_HISTORY]: parseInt(process.env.NETFLIX_HISTORY_POINTS, 10) || 1,
-        [EContributionSubType.NETFLIX_FAVORITE]: parseInt(process.env.NETFLIX_FAVORITE_POINTS, 10) || 1,
+        [EContributionSubType.NETFLIX_HISTORY]: parseInt(process.env.NETFLIX_HISTORY_POINTS, 10) || 50,
+        [EContributionSubType.NETFLIX_FAVORITE]: parseInt(process.env.NETFLIX_FAVORITE_POINTS, 10) || 50,
     },
     [EContributionType.SPOTIFY]: {
-        [EContributionSubType.SPOTIFY_PLAYLIST]: parseInt(process.env.SPOTIFY_PLAYLIST_POINTS, 10) || 1,
-        [EContributionSubType.SPOTIFY_HISTORY]: parseInt(process.env.SPOTIFY_HISTORY_POINTS, 10) || 1,
+        [EContributionSubType.SPOTIFY_PLAYLIST]: parseInt(process.env.SPOTIFY_PLAYLIST_POINTS, 10) || 50,
+        [EContributionSubType.SPOTIFY_HISTORY]: parseInt(process.env.SPOTIFY_HISTORY_POINTS, 10) || 50,
     },
     [EContributionType.AMAZON]: {
-        [EContributionSubType.AMAZON_PRIME_VIDEO]: parseInt(process.env.AMAZON_PRIME_VIDEO_POINTS, 10) || 1,
-        [EContributionSubType.AMAZON_ORDER_HISTORY]: parseInt(process.env.AMAZON_ORDER_HISTORY_POINTS, 10) || 1,
+        [EContributionSubType.AMAZON_PRIME_VIDEO]: parseInt(process.env.AMAZON_PRIME_VIDEO_POINTS, 10) || 50,
+        [EContributionSubType.AMAZON_ORDER_HISTORY]: parseInt(process.env.AMAZON_ORDER_HISTORY_POINTS, 10) || 50,
     },
     [EContributionType.TWITTER]: {
-        [EContributionSubType.TWITTER_USERINFO]: parseInt(process.env.TWITTER_USERINFO_POINTS, 10) || 1,
+        [EContributionSubType.TWITTER_USERINFO]: parseInt(process.env.TWITTER_USERINFO_POINTS, 10) || 50,
     },
     [EContributionType.YOUTUBE]: {
-        [EContributionSubType.YOUTUBE_HISTORY]: parseInt(process.env.YOUTUBE_HISTORY_POINTS, 10) || 1,
-        [EContributionSubType.YOUTUBE_PLAYLIST]: parseInt(process.env.YOUTUBE_PLAYLIST_POINTS, 10) || 1,
-        [EContributionSubType.YOUTUBE_SUBSCRIBERS]: parseInt(process.env.YOUTUBE_SUBSCRIBERS_POINTS, 10) || 1,
+        [EContributionSubType.YOUTUBE_HISTORY]: parseInt(process.env.YOUTUBE_HISTORY_POINTS, 10) || 50,
+        [EContributionSubType.YOUTUBE_PLAYLIST]: parseInt(process.env.YOUTUBE_PLAYLIST_POINTS, 10) || 50,
+        [EContributionSubType.YOUTUBE_SUBSCRIBERS]: parseInt(process.env.YOUTUBE_SUBSCRIBERS_POINTS, 10) || 50,
     },
     [EContributionType.FARCASTER]: {
-        [EContributionSubType.FARCASTER_USERINFO]: parseInt(process.env.FARCASTER_USERINFO_POINTS, 10) || 1,
+        [EContributionSubType.FARCASTER_USERINFO]: parseInt(process.env.FARCASTER_USERINFO_POINTS, 10) || 50,
     },
 };
 
