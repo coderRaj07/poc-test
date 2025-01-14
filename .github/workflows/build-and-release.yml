@@ -36,8 +36,9 @@ jobs:
 
     - name: Clone and set up GSC
       run: |
-        git clone https://github.com/coderRaj07/gsc
+        git clone https://github.com/gramineproject/gsc.git
         cd gsc
+        git checkout 7fc918abf6b7ad1d6af5f28f3cea259192d7f48f
         python3 -m pip install --no-cache-dir 'docker>=7.1.0' 'jinja2>=3.1.4' 'tomli>=2.0.1' 'tomli-w>=1.0.0' 'pyyaml>=6.0.2'
 
     - name: Create signing key
