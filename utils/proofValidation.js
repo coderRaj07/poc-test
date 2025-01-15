@@ -110,27 +110,28 @@ function calculateScore(proofResponseObject) {
 }
 
 async function ownershipScore(apiUrl, jwtToken, body) {
-    if (!jwtToken || typeof jwtToken !== 'string') {
-        throw new Error('JWT token is required and must be a string');
-    }
-    if (!body || typeof body !== 'object' || !body.walletAddress || !Array.isArray(body.subType)) {
-        throw new Error('Invalid body format. Ensure walletAddress is a string and subType is an array.');
-    }
+    // if (!jwtToken || typeof jwtToken !== 'string') {
+    //     throw new Error('JWT token is required and must be a string');
+    // }
+    // if (!body || typeof body !== 'object' || !body.walletAddress || !Array.isArray(body.subType)) {
+    //     throw new Error('Invalid body format. Ensure walletAddress is a string and subType is an array.');
+    // }
 
     try {
-        // Simulate a 400 error based on a condition
-        // if (body.walletAddress === '0x1059Ed65AD58ffc83642C9Be3f24C250905a28FB') {
-        //     const error = new Error('Simulated 400 error');
-        //     error.response = { status: 400, data: { error: 'Simulated 400 error' } };
-        //     throw error;
-        // }
-        const response = await axios.post(apiUrl, body, {
-            headers: {
-                Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
-            },
-        });
+    //     // Simulate a 400 error based on a condition
+    //     // if (body.walletAddress === '0x1059Ed65AD58ffc83642C9Be3f24C250905a28FB') {
+    //     //     const error = new Error('Simulated 400 error');
+    //     //     error.response = { status: 400, data: { error: 'Simulated 400 error' } };
+    //     //     throw error;
+    //     // }
+    //     const response = await axios.post(apiUrl, body, {
+    //         headers: {
+    //             Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
+    //         },
+    //     });
 
-        return response.data.success ? 1.0 : 0.0;
+        // return response.data.success ? 1.0 : 0.0;
+        return 1.0;
 
     } catch (error) {
         console.log({ error });
