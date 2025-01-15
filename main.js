@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import unzipper from 'unzipper';
 import dotenv from 'dotenv';
-import { Proof } from '../utils/proofValidation.js';
+import { Proof } from './utils/proofValidation.js';
 
 // Load environment variables from .env file
 dotenv.config();

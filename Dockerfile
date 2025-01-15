@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Command to run the script
-CMD ["node", "myProof/main.js"]
+CMD ["node", "main.js"]
