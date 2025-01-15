@@ -46,12 +46,13 @@ export class Proof {
 
                 proofResponseObject.authenticity = await authenticityScore(inputData);
                 proofResponseObject.uniqueness = await uniquenessScore(inputData);
-                proofResponseObject.contribution = contributionScoreResult.normalizedDynamicScore;
+                // proofResponseObject.contribution = contributionScoreResult.normalizedDynamicScore;
                 proofResponseObject.ownership = await ownershipScore(this.validatorBaseApiUrl, jwtToken, {
                     walletAddress, subType
                 });
-                // proofResponseObject.quality  = await qualityScore(inputData); // not reqd. now
-
+                proofResponseObject.quality  = 1
+                // await qualityScore(inputData); // not reqd. now
+                proofResponseObject.valid = false
                 proofResponseObject.score = calculateScore(proofResponseObject);
 
                 // proofResponseObject.valid = proofResponseObject.quality > 0.05;
