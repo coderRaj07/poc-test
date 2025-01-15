@@ -30,7 +30,7 @@ export class Proof {
         console.info("Starting proof generation");
 
         let proofResponseObject = {
-            dlpId: this.dlpId || '24',
+            dlp_id: this.dlpId || '24',
         };
 
         let inputData;
