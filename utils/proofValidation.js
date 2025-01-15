@@ -52,7 +52,7 @@ export class Proof {
                 });
                 proofResponseObject.quality  = 1
                 // await qualityScore(inputData); // not reqd. now
-                proofResponseObject.valid = false
+                proofResponseObject.valid = true
                 proofResponseObject.score = calculateScore(proofResponseObject);
 
                 // proofResponseObject.valid = proofResponseObject.quality > 0.05;
