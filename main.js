@@ -61,7 +61,7 @@ async function run() {
 
     // Assume Proof is asynchronous
     const proof = new Proof(config);
-    const proofResponse = await proof.generate();
+    const proofResponse = await proof.testGenerate();
 
     const outputPath = path.join(OUTPUT_DIR, 'results.json');
     fs.writeFileSync(outputPath, JSON.stringify(proofResponse, null, 2));

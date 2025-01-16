@@ -26,6 +26,23 @@ export class Proof {
         this.awsSecretAccessKey = this.config.awsSecretAccessKey;
     }
 
+    async testGenerate(){
+        return {
+            "dlp_id": 24, // DLP ID is found in the Root Network contract after the DLP is registered
+            "valid": true, // A single boolean to summarize if the file is considered valid in this DLP
+            "score": 0.7614457831325301, // A score between 0 and 1 for the file, used to determine how valuable the file is. This can be an aggregation of the individual scores below.
+            "authenticity": 1.0, // A score between 0 and 1 to rate if the file has been tampered with
+            "ownership": 1.0, // A score between 0 and 1 to verify the ownership of the file
+            "quality": 0.6024096385542169, // A score between 0 and 1 to show the quality of the file
+            "uniqueness": 0, // A score between 0 and 1 to show unique the file is, compared to others in the DLP
+            "attributes": { // Custom attributes that can be added to the proof to provide extra context about the encrypted file
+              "total_score": 0.5,
+              "score_threshold": 0.83,
+              "email_verified": true
+            }
+          }
+    }
+
     async generate() {
         console.info("Starting proof generation");
 
