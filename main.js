@@ -11,9 +11,9 @@ import { Proof } from './utils/proofValidation.js';
 // const environment = process.env.NODE_ENV || 'production';
 
 // Set the input and output directories based on the environment
-const INPUT_DIR = './demo/input'
-const OUTPUT_DIR = './demo/output'
-const SEALED_DIR ='./demo/sealed'
+const INPUT_DIR = '/input'
+const OUTPUT_DIR = '/output'
+const SEALED_DIR ='/sealed'
 
 function loadConfig() {
     const config = {
