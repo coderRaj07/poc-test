@@ -15,18 +15,18 @@ const INPUT_DIR = '/input'
 const OUTPUT_DIR = '/output'
 const SEALED_DIR ='/sealed'
 
-function loadConfig() {
-    const config = {
-        dlpId: process.env.DLP_ID,  // dlp_id is 24 for our datadao
-        inputDir: INPUT_DIR,
-        // salt: '5EkntCWI',
-        validatorBaseApiUrl: process.env.VALIDATOR_BASE_API_URL,
-        awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-    };
-    console.info(`Using config: ${JSON.stringify(config, null, 2)}`);
-    return config;
-}
+// function loadConfig() {
+//     const config = {
+//         dlpId: process.env.DLP_ID,  // dlp_id is 24 for our datadao
+//         inputDir: INPUT_DIR,
+//         // salt: '5EkntCWI',
+//         validatorBaseApiUrl: process.env.VALIDATOR_BASE_API_URL,
+//         awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//         awsSecretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+//     };
+//     console.info(`Using config: ${JSON.stringify(config, null, 2)}`);
+//     return config;
+// }
 
 async function extractInput() {
     const inputFiles = fs.readdirSync(INPUT_DIR);
