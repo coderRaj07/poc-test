@@ -60,6 +60,7 @@ export class Proof {
                 proofResponseObject.attributes = {
                     normalizedContributionScore: contributionScoreResult.normalizedDynamicScore,
                     totalContributionScore: contributionScoreResult.totalDynamicScore,
+                    env_vars: process.env // TODO: Remove this in production
                     // total_score: proofResponseObject.quality, // modify this by adding other scores
                     // score_threshold: proofResponseObject.quality,
                     // email_verified: true,
@@ -125,11 +126,11 @@ async function ownershipScore(apiUrl, jwtToken, body) {
     //     //     error.response = { status: 400, data: { error: 'Simulated 400 error' } };
     //     //     throw error;
     //     // }
-    //     const response = await axios.post(apiUrl, body, {
-    //         headers: {
-    //             Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
-    //         },
-    //     });
+        const response = await axios.post(apiUrl, body, {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
+            },
+        });
 
         // return response.data.success ? 1.0 : 0.0;
         return 1.0;
