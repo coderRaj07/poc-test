@@ -128,36 +128,36 @@ export class Proof {
 //     return parseFloat(score.toFixed(5)); // Ensures score is rounded to 5 decimal places
 // }
 
-// async function ownershipScore(apiUrl, jwtToken, body) {
-//     // if (!jwtToken || typeof jwtToken !== 'string') {
-//     //     throw new Error('JWT token is required and must be a string');
-//     // }
-//     // if (!body || typeof body !== 'object' || !body.walletAddress || !Array.isArray(body.subType)) {
-//     //     throw new Error('Invalid body format. Ensure walletAddress is a string and subType is an array.');
-//     // }
+async function ownershipScore(apiUrl, jwtToken, body) {
+    if (!jwtToken || typeof jwtToken !== 'string') {
+        throw new Error('JWT token is required and must be a string');
+    }
+    if (!body || typeof body !== 'object' || !body.walletAddress || !Array.isArray(body.subType)) {
+        throw new Error('Invalid body format. Ensure walletAddress is a string and subType is an array.');
+    }
 
-//     try {
-//     //     // Simulate a 400 error based on a condition
-//     //     // if (body.walletAddress === '0x1059Ed65AD58ffc83642C9Be3f24C250905a28FB') {
-//     //     //     const error = new Error('Simulated 400 error');
-//     //     //     error.response = { status: 400, data: { error: 'Simulated 400 error' } };
-//     //     //     throw error;
-//     //     // }
-//         const response = await axios.post(apiUrl, body, {
-//             headers: {
-//                 Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
-//             },
-//         });
+    try {
+    //     // Simulate a 400 error based on a condition
+    //     // if (body.walletAddress === '0x1059Ed65AD58ffc83642C9Be3f24C250905a28FB') {
+    //     //     const error = new Error('Simulated 400 error');
+    //     //     error.response = { status: 400, data: { error: 'Simulated 400 error' } };
+    //     //     throw error;
+    //     // }
+        const response = await axios.post(apiUrl, body, {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`, // Attach JWT token in the Authorization header
+            },
+        });
 
-//         // return response.data.success ? 1.0 : 0.0;
-//         return 1.0;
+        // return response.data.success ? 1.0 : 0.0;
+        return 1.0;
 
-//     } catch (error) {
-//         console.log({ error });
-//         if (error.response?.status === 400) return 0.0;
-//         throw new Error(`API call failed: ${error.response?.data?.error || error.message}`);
-//     }
-// }
+    } catch (error) {
+        console.log({ error });
+        if (error.response?.status === 400) return 0.0;
+        throw new Error(`API call failed: ${error.response?.data?.error || error.message}`);
+    }
+}
 
 // async function authenticityScore(dataList) {
 //     if (!dataList || !dataList.contribution) {
