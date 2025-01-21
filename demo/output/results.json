@@ -1,0 +1,14 @@
+{
+  "dlp_id": 24,
+  "valid": true,
+  "score": 0.7614457831325301,
+  "authenticity": 1,
+  "ownership": 1,
+  "quality": 0.6024096385542169,
+  "uniqueness": 0,
+  "attributes": {
+    "total_score": 0.5,
+    "score_threshold": 0.83,
+    "email_verified": true
+  }
+}
