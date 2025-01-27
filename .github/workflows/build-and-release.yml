@@ -15,14 +15,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      # Set up Node.js for building and testing
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.11'
+          node-version: '22'
 
+      # Install dependencies and run tests
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      # Set up Docker Buildx for multi-platform builds
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      # Build and tag Docker image
       - name: Build Docker image
         uses: docker/build-push-action@v4
         with:
@@ -34,20 +44,24 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # Export the image as a tarball
       - name: Export image to file
         run: |
           docker save my-proof:latest | gzip > my-proof-${{ github.run_number }}.tar.gz
 
+      # Generate a release body with SHA256 checksum
       - name: Generate release body
         run: |
           echo "Image SHA256: $(sha256sum my-proof-${{ github.run_number }}.tar.gz | cut -d' ' -f1)" >> release_body.txt
 
+      # Upload the Docker image as an artifact
       - name: Upload image
         uses: actions/upload-artifact@v3
         with:
           name: my-proof-image
           path: my-proof-${{ github.run_number }}.tar.gz
 
+      # Create a GitHub Release and attach the Docker image tarball
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v1
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -62,6 +76,7 @@ jobs:
           files: |
             ./my-proof-${{ github.run_number }}.tar.gz
 
+      # Log the build and release result
       - name: Log build result
         if: always()
         run: |
